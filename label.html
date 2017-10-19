@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Random Post</title>
+<title>Label</title>
 <meta content='width=device-width, initial-scale=1' name='viewport'>
+ <body>
 <script type="text/javascript">
 function recentpostslist(json) {
  document.write('<ul>');
@@ -16,13 +17,12 @@ function recentpostslist(json) {
     }
 var entryUrl = "'" + json.feed.entry[i].link[j].href + "'";//bs
 var entryTitle = json.feed.entry[i].title.$t;
-var item = "<li>" + "<a href="+ entryUrl + '" target="_blank">' + entryTitle + "</a> </li>";
+var item = "<li>" + "<a href="+ entryUrl + '">' + entryTitle + "</a> </li>";
  document.write(item);
  }
  document.write('</ul>');
  }
 </script>
- <body>
 <script src="http://www.suamaylanhbd.com/feeds/posts/summary/-/1?max-results=30&alt=json-in-script&callback=recentpostslist"></script>
  </body>
  </html>
