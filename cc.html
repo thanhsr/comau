@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Label</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<style>
+  /*
+THEME   	: BLOGAMP
+DEGIN URL   : https://www.goomsite.top/
+Design		: Basri Matindas
+Donasi		: Rek BANK BRI 022501016056534 an. Basri Matindas
+
+Thanks For 	:
+http://www.kompiajaib.com
+https://www.disqus.com
+https://github.com
+*/
+body{
+  background: #ECECEC;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+}
+/* font */
+@font-face {
+  font-family: &#39;Open Sans&#39;;
+  font-style: normal;
+  font-weight: 600;
+  src: local(&#39;Titillium WebSemiBold&#39;), local(&#39;TitilliumWeb-SemiBold&#39;), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wpr46gJz9aNFrmnwBdd69aqzY.woff2) format(&#39;woff2&#39;);
+}
+@font-face {
+ font-family: &#39;Open Sans&#39;;
+  font-style: normal;
+  font-weight: 700;
+  src: local(&#39;Titillium WebBold&#39;), local(&#39;TitilliumWeb-Bold&#39;), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wprxP6Eu1_xfSBSoi9uie1FdE.woff2) format(&#39;woff2&#39;);
+}
+@font-face {
+font-family: &#39;Open Sans&#39;;
+  font-style: normal;
+  font-weight: 400;
+  src: local(&#39;Titillium Web&#39;), local(&#39;TitilliumWeb-Regular&#39;), url(https://fonts.gstatic.com/s/titilliumweb/v4/7XUFZ5tgS-tD6QamInJTcZSnX671uNZIV63UdXh3Mg0.woff2) format(&#39;woff2&#39;);
+}
+/* Material Icon */
+@font-face {
+  font-family: &#39;Material Icons&#39;;
+  font-style: normal;
+  font-weight: 400;
+  src: local(&#39;Material Icons&#39;), local(&#39;MaterialIcons-Regular&#39;), url(https://fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ewrjPiaoEww8AihgqWRJAo.woff) format(&#39;woff&#39;), url(https://fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format(&#39;woff2&#39;), url(https://fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5bbKic1PW3nceB3q24YFOMg.ttf) format(&#39;truetype&#39;);}
+.material-icons {font-family: &#39;Material Icons&#39;;font-weight:normal;font-style:normal;font-size:inherit;display:inline-block;line-height:1;text-transform:none;letter-spacing:normal;word-wrap:normal;white-space:nowrap;direction:ltr;vertical-align:middle;
+/* Support for all WebKit browsers. */
+-webkit-font-smoothing: antialiased;
+/* Support for Safari and Chrome. */
+text-rendering: optimizeLegibility;
+/* Support for Firefox. */
+-moz-osx-font-smoothing: grayscale;
+/* Support for IE. */
+font-feature-settings: &#39;liga&#39;;
+}
+
+/* Reset and Variable Apply Here */
+a,abbr,acronym,address,applet,b,big,blockquote,body,caption,center,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,kbd,label,legend,li,object,p,pre,q,s,samp,small,span,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul,var{padding:0;border:0;outline:0;vertical-align:baseline;background:0 0}
+ins{text-decoration:underline}
+del{text-decoration:line-through}
+blockquote{font-size:17px;line-height:1.5em;font-style:italic;color:#1c1c1c}
+dl,ul{list-style-position:inside;font-weight:700;list-style:none}
+ul li{list-style:none;border : 1px solid #ececec;}
+ </style>
+ </head>
+ <body>
+<script type="text/javascript">
+function recentpostslist(json) {
+ document.write('<ul>');
+ for (var i = 0; i < json.feed.entry.length; i++)
+ {
+    for (var j = 0; j < json.feed.entry[i].link.length; j++) {
+      if (json.feed.entry[i].link[j].rel == 'alternate') {
+        break;
+      }
+    }
+var entryUrl = "'" + json.feed.entry[i].link[j].href + "'";//bs
+var entryTitle = json.feed.entry[i].title.$t;
+var item = "<li>" + "<a href="+ entryUrl + '" target="_blank">' + entryTitle + "</a> </li>";
+ document.write(item);
+ }
+ document.write('</ul>');
+ }
+</script>
+<script src="https://co-mau.blogspot.com/feeds/posts/summary/-/fuck?max-results=30&alt=json-in-script&callback=recentpostslist"></script>
+ </body>
+ </html>
