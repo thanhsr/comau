@@ -85,13 +85,6 @@ var item = "<li><b:eval expr='resizeImage(data:post.thumbnailUrl, 200, "1:1")' /
  }
  document.write('</ul>');
  }
-  function bp_thumbnail_resize(image_url,post_title)
-{
-    var image_width=200;
-    var image_height=160;
-    image_tag='<img width="'+image_width+'" height="'+image_height+'" src="'+image_url.replace('/s72-c/','/w'+image_width+'-h'+image_height+'/')+'" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'"/>';
-    if(post_title!="") return image_tag; else return ""; 
-}
 </script>
 <script src="https://co-mau.blogspot.com/feeds/posts/summary/-/fuck?max-results=30&alt=json-in-script&callback=recentpostslist"></script>
  </body>
