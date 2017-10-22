@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf8">
+<meta charset="utf-8">
 <title>Label</title>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
 <style>
 /* Recent posts by labels
 --------------------------------- */
@@ -45,6 +46,8 @@ padding:0 !important;
 #label_with_thumbs a { text-transform: none;}
 #label_with_thumbs a:hover { text-decoration: underline;padding:2px;}
 #label_with_thumbs strong {padding:2px;}</style>
+    </head>
+    <body>
 <script type='text/javascript'>
 //<![CDATA[
 function labelthumbs(json){document.write('<ul id="label_with_thumbs">');for(var i=0;i<numposts;i++){var entry=json.feed.entry[i];var posttitle=entry.title.$t;var posturl;if(i==json.feed.entry.length)break;for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='replies'&&entry.link[k].type=='text/html'){var commenttext=entry.link[k].title;var commenturl=entry.link[k].href;}
@@ -67,8 +70,6 @@ if(i!=(numposts-1))
 document.write('');}document.write('</ul>');}
 //]]>
 </script>
-</head>
-<body>
 <h2 style="background:#8c3636;font:bold Arial 20px;border:1px solid #bababa;padding:4px;">Tin tức</h2>
 <script type='text/javascript'>var numposts = 5;var showpostthumbnails = true;var displaymore = false;var displayseparator = true;var showcommentnum = false;var showpostdate = false;var showpostsummary = true;var numchars = 100;</script> 
 <script type="text/javascript" src="https://co-mau.blogspot.com/feeds/posts/default/-/fuck?published&alt=json-in-script&callback=labelthumbs"></script>
